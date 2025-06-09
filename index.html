@@ -1,0 +1,1277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;SEBAL Capital | The Institutional Gateway to Digital Assets&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>scroll-behavior: smooth;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gradient-text-blue {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(to right, #0044cc, #007bff);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease, box-shadow 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-5px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chart-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-left: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 350px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 40vh;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.chart-container {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>height: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>max-height: 50vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.accordion-header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f0f8ff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #0044cc;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.accordion-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: max-height 0.3s ease-out, padding 0.3s ease-out;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f7fcff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.accordion-content.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 2000px; /* Arbitrary large value to allow content to expand */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.accordion-arrow {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.accordion-header.active .accordion-arrow {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: rotate(90deg);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.loader {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 4px solid #f3f3f3;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 4px solid #007bff;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: spin 1s linear infinite;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes spin {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: rotate(0deg); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: rotate(360deg); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gray-50 text-gray-800"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="bg-white sticky top-0 z-50 shadow-md"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="container mx-auto px-6 py-4 flex justify-between items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1 class="text-2xl font-black text-gray-900"&gt;SEBAL &lt;span class="text-[#007bff]"&gt;CAPITAL&lt;/span&gt;&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="font-semibold text-gray-600 hidden md:block"&gt;The Institutional Gateway to Digital Assets&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="container mx-auto px-6 py-12 md:py-20"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="intro" class="text-center mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl md:text-6xl font-black text-gray-900 leading-tight mb-4"&gt;Digital Assets Are a Strategic Imperative&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-4xl mx-auto text-lg md:text-xl text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Digital assets are no longer a niche product. They are a strategic imperative asset class. As the financial landscape evolves, Bitcoin and other leading cryptocurrencies have emerged not just as high-growth assets, but as vital components of diversified institutional portfolios.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="market-opportunity" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black text-center gradient-text-blue mb-12"&gt;Explosive Market Opportunity&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-4xl mx-auto text-center text-lg text-gray-600 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>The digital asset market is experiencing unprecedented institutional adoption and is poised for significant future growth, driven by both asset management and governmental interest.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card lg:col-span-1 bg-[#0044cc] text-white flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold mb-4"&gt;AUM Surge&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-7xl font-black mb-4"&gt;$129B&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-blue-200"&gt;By the end of 2024, U.S. spot Bitcoin ETFs attracted $129 billion of assets under management, showcasing explosive growth and investor confidence.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card lg:col-span-2 flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold mb-2"&gt;Surpassing Traditional Assets&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600 mb-4"&gt;The success of U.S. spot Bitcoin ETFs has already surpassed that of established vehicles like gold ETFs in attracting new capital, highlighting a fundamental shift in investment trends.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container h-[280px] md:h-[320px]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;canvas id="etfComparisonChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-3xl font-bold mb-4"&gt;The Next Wave: $426B in Projected Inflows&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600 mb-6"&gt;According to Bitwise/UTXO projections, institutional investors are expected to accumulate over 4.2 million BTC by the end of 2026, representing more than 20% of the total Bitcoin supply, signaling a monumental shift in capital allocation.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-blue-50 rounded-lg p-4 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg font-semibold text-blue-800"&gt;Projected Institutional Share by 2026&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-4xl font-extrabold text-[#007bff]"&gt;20% of Total Supply&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-4"&gt;Projected Institutional BTC Holdings&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4"&gt;Sovereign wealth funds, nation states, and wealth platforms are expected to hold over 20% of BTC supply, with over 20 U.S. states exploring treasury allocations to Bitcoin.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container h-[350px] md:h-[400px]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;canvas id="projectedHoldingsChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-bold mb-4"&gt;Derivatives Infrastructure Has Reached Maturity&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-600 mb-6"&gt;Robust derivatives markets for Bitcoin, Ethereum, Solana, XRP, and Dogecoin demonstrate the growing institutional flows and liquidity, providing fertile ground for advanced strategies.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="chart-container h-[400px] md:h-[450px]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;canvas id="optionsVolumeChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-gray-500 mt-4 text-center"&gt;BTC: &gt;$20B in weekly options volume. ETH: &gt;$12B weekly options volume. SOL, XRP, DOGE options volume growing 10x year-over-year.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="challenge" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black text-center text-gray-900 mb-12"&gt;The Institutional Challenge: Unmanaged Risk&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-3xl mx-auto text-center text-lg text-gray-600 mb-12"&gt;With this growing adoption comes a critical need for smarter, risk-controlled, structured exposure to this new asset class. Traditional methods leave institutional capital exposed to extreme volatility and full downside risk.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card border-4 border-red-300 bg-red-50 flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold mb-4 text-red-600"&gt;Traditional Exposure: Full Downside Risk&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600 mb-6"&gt;Passive ETFs and spot holdings absorb the full, unforgiving volatility of the crypto market, leading to uncertain returns and significant downside exposure for investors.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-full h-40 bg-red-100 rounded-lg flex flex-col items-center justify-center p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;p class="text-4xl font-bold text-red-500 transform -rotate-6"&gt;UNCERTAIN RETURNS&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;p class="text-3xl font-bold text-red-600 mt-2"&gt;FULL DOWNSIDE&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card border-4 border-green-300 bg-green-50 flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-2xl font-bold mb-4 text-green-700"&gt;The SEBAL Approach: Risk-Mitigated Growth&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600 mb-6"&gt;Our strategies are purpose-built to shape risk, not simply absorb it, providing a structured, risk-mitigated growth profile that aligns with institutional objectives.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;div class="w-full h-40 bg-green-100 rounded-lg flex flex-col items-center justify-center p-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;p class="text-4xl font-bold text-green-600 transform rotate-3"&gt;DEFINED OUTCOMES&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                         </span>&lt;p class="text-3xl font-bold text-green-700 mt-2"&gt;SHAPED RISK&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="solution" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black text-center gradient-text-blue mb-12"&gt;The SEBAL Solution: A Dual-Strategy Approach&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-3xl mx-auto text-center text-lg text-gray-600 mb-12"&gt;SEBAL Digital Asset Funds are built to solve this gap. We offer a sophisticated, dual-strategy solution purpose-built for institutional allocators.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-1 text-[#007bff]"&gt;Strategy 1:&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-3xl font-extrabold text-[#0044cc] mb-4"&gt;Downside Protected Defined Outcome Strategy&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600 mb-6"&gt;This strategy delivers capped exposure to the price return of the top 5 cryptocurrency assets (BTC, ETH, XRP, SOL, DOGE), while limiting the maximum loss to 20%. By purchasing protective put options and selling out-of-the-money call options, we create a defined payoff profile that balances growth with capital preservation.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-gray-50 rounded-lg p-6 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg font-bold text-gray-700"&gt;Key Advantages:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="list-disc pl-5 text-gray-700 space-y-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Diversified Exposure:** Balanced growth across leading cryptocurrency assets.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Capital Preservation:** Losses capped at 20%, even in severe market downturns.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Defined Outcome:** 12-month period optimizes risk-reward.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Annual Liquidity:** Clear investment horizon supports strategic planning.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Risk Management:** Options structure mitigates volatility risks.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-4 text-[#0044cc]"&gt;Defined Upside &amp; Downside&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4"&gt;This chart illustrates the predefined payoff profile of our Defined Outcome Strategy, showcasing how it limits downside while capturing significant upside potential.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container h-[350px] md:h-[400px]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;canvas id="definedOutcomeChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-blue-50 rounded-lg p-4 text-center mt-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg font-semibold text-blue-800"&gt;Expected Payoff Profile:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col md:flex-row justify-around mt-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mb-2 md:mb-0"&gt;&lt;span class="text-xl font-bold text-red-600"&gt;Max Loss:&lt;/span&gt; &lt;span class="text-3xl font-extrabold text-red-600"&gt;20%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;&lt;span class="text-xl font-bold text-green-600"&gt;Max Gain:&lt;/span&gt; &lt;span class="text-3xl font-extrabold text-green-600"&gt;65%*&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500 mt-2"&gt;*The maximum gain is an estimate and is dependent upon implied volatility, funding rates, and other variables in the market.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 lg:grid-cols-2 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="text-xl font-bold mb-1 text-[#007bff]"&gt;Strategy 2:&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-3xl font-extrabold text-[#0044cc] mb-4"&gt;Covered Call Income &amp; Price Appreciation&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-600 mb-6"&gt;This strategy generates quarterly income by selling 20% to 30% out-of-the-money call options on the top 5 cryptocurrency assets, while maintaining long exposure for price appreciation. Cryptocurrencies' high volatility maximizes premium income, enhancing returns and providing a buffer against declines.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-gray-50 rounded-lg p-6 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-lg font-bold text-gray-700"&gt;Key Advantages:&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;ul class="list-disc pl-5 text-gray-700 space-y-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Yield Enhancement:** Consistent premiums boost baseline returns.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Volatility Advantage:** Higher premiums than traditional assets due to cryptocurrency's volatility.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Downside Floor:** Premiums reduce the breakeven price of assets.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Disciplined Exits:** Calls create natural exit points on upside moves.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li&gt;**Quarterly Liquidity:** Regular income distributions enhance flexibility.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-4 text-[#0044cc]"&gt;Return Range Across Strategies&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600 mb-4"&gt;This chart highlights the potential return profiles for the Covered Call Income &amp; Price Appreciation strategy across different time horizons, demonstrating its attractive yield and growth potential.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container h-[350px] md:h-[400px]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;canvas id="returnRangeChart"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="bg-blue-50 rounded-lg p-4 text-center mt-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="flex flex-col md:flex-row justify-around mt-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="mb-2 md:mb-0"&gt;&lt;span class="text-xl font-bold text-green-600"&gt;Target Quarterly Premiums:&lt;/span&gt; &lt;span class="text-3xl font-extrabold text-green-600"&gt;~7.5%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div&gt;&lt;span class="text-xl font-bold text-green-600"&gt;Target Annualized Returns:&lt;/span&gt; &lt;span class="text-3xl font-extrabold text-green-600"&gt;30-130%&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="differentiation" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black text-center text-gray-900 mb-12"&gt;What Sets Us Apart: Beyond ETFs, Beyond Retail&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-3xl mx-auto text-center text-lg text-gray-600 mb-12"&gt;While BTC ETFs have introduced accessibility, they are limited in scope and performance. Sebal Digital Asset Funds deliver institutional-grade exposure, yield generation, and defined risk control in a structure built for sophisticated investors. Here's why we outperform passive strategies and DIY approaches:&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col items-center text-center p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-4"&gt;Broader Exposure&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Our strategies go beyond Bitcoin, providing diversified exposure to the five leading tokens (BTC, ETH, XRP, SOL, DOGE) through active selection and rebalancing. ETFs typically offer only single-asset exposure.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col items-center text-center p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-4"&gt;Covered Call Alpha&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;We execute systematic, disciplined, options-based strategies and volatility overlays across multiple assets, rebalanced and actively managed for better income capture and downside support.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col items-center text-center p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-4"&gt;Defined Outcome Risk&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;SEBAL Digital Asset Funds includes a 12-month structured strategy capping downside at 20% while targeting a defined 65% upside, something ETFs or retail derivatives cannot replicate.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col items-center text-center p-6 md:col-span-1 lg:col-span-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-4"&gt;Institutional Infrastructure&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Investors benefit from qualified custody, NAV reporting, streamlined onboarding, K-1 tax documents, and regulatory clarity. No DIY execution, no tax complexity.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card flex flex-col items-center text-center p-6 md:col-span-1 lg:col-span-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-4"&gt;Purpose-Built for Allocators&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;SEBAL Digital Assets Fund is built for family offices, fund allocators, and accredited investors seeking structured crypto yield, not retail-style speculation.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-2xl font-bold mb-4 text-center"&gt;How Do We Compare to DIY BTC ETF Strategies?&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-600 mb-6 text-center"&gt;SEBAL Digital Assets Fund is not a simple retail product. It is an engineered, multi-asset strategy designed to capture yield, manage volatility, and support growth and wealth preservation in crypto.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;table class="min-w-full divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;thead class="bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Feature&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Spot Holdings&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;BTC ETF&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;SEBAL&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;tbody class="bg-white divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Diversified Asset Base&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;0%&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;BTC only&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"&gt;BTC, ETH, SOL, DOGE, XRP&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Structured Risk Control&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;No&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;No&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"&gt;Yes (Defined Downside)&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Yield Potential&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;Variable&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;0%&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"&gt;30% Ann. via Options&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Professional Mgmt&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;Self-managed&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;None&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"&gt;Active overlays, rebalancing&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Scalable&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;Liquidity-dependent&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;Limited by product mandate&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"&gt;Yes, (across large cap tokens)&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Tax and Admin Burden&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;On Investor&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;On Investor&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"&gt;Fund handles, custody reporting, K-1&lt;/td&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="our-approach" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black text-center gradient-text-blue mb-12"&gt;Our Comprehensive Approach&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-3xl mx-auto text-center text-lg text-gray-600 mb-12"&gt;SEBAL Digital Asset Funds bridge the gap between TradFi and cryptocurrencies with a sophisticated, investor-centric design, ensuring robust management and security.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card p-6 flex flex-col justify-between items-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl mb-4 text-[#007bff]"&gt;📊&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-3"&gt;Diversified Portfolios&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Professionally managed investments in top cryptocurrency assets through familiar structures.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card p-6 flex flex-col justify-between items-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl mb-4 text-[#007bff]"&gt;⚙️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-3"&gt;Tailored Risk Profiles&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Strategies designed to match investor risk tolerance and objectives.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card p-6 flex flex-col justify-between items-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl mb-4 text-[#007bff]"&gt;📈&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-3"&gt;Systematic Strategies&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Systematic, back-tested strategies to maximize the risk/reward investment outcomes.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card p-6 flex flex-col justify-between items-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl mb-4 text-[#007bff]"&gt;🧠&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-3"&gt;Expert Oversight&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Our team manages market volatility, operational complexities, and portfolio allocation.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card p-6 flex flex-col justify-between items-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl mb-4 text-[#007bff]"&gt;🔒&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-3"&gt;Institutional-Grade Custody&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Partnered with a leading custodian to protect assets from hacks and theft.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card p-6 flex flex-col justify-between items-center text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl mb-4 text-[#007bff]"&gt;🚀&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-3"&gt;Seamless Onboarding&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Streamlined process allows investment in minutes, no technical expertise required.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card p-6 flex flex-col justify-between items-center text-center md:col-span-2 lg:col-span-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-5xl mb-4 text-[#007bff]"&gt;⚖️&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-3"&gt;Regulatory Clarity&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;Operates within a compliant framework, benefiting from recent legislative advances like the SAB 121 repeal and DUNA Act.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="fund-structure" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black text-center text-gray-900 mb-12"&gt;Fund Structure &amp; Operations&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-3xl mx-auto text-center text-lg text-gray-600 mb-12"&gt;Details on the operational framework and key terms of the SEBAL Digital Assets Fund.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-lg"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="col-span-full mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-2"&gt;Key Fund Details&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Fund Vehicle:&lt;/span&gt; Delaware Fund&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Target Raise:&lt;/span&gt; $15 million (initial)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Minimum Investment:&lt;/span&gt; $100,000&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Fees:&lt;/span&gt; 1.5% Management Fee &amp; 15% performance, SMA (Negotiable)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Liquidity:&lt;/span&gt; Annual&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Fund Strategy Access:&lt;/span&gt; Available via flagship fund or through custom Separately Managed Accounts (SMAs) - SMA terms are negotiable and designed for flexibility at higher capital commitments&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Fee Structure:&lt;/span&gt; 1.5% annual management fee and 15% performance fee carried interest&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Eligible Investors:&lt;/span&gt; Accredited, RIAs, Family Offices, Institutions&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Custodian:&lt;/span&gt; Institutional-grade custody (Coinbase Prime, Bitgo, Onramp etc.)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Admin:&lt;/span&gt; Tier-1 fund administrator&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Tax Reporting:&lt;/span&gt; Full K-1 delivery&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Risk Oversight:&lt;/span&gt; Internal risk framework with daily exposure monitoring, rebalancing triggers, and operational checks&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center space-x-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-[#007bff] text-2xl"&gt;•&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;&lt;span class="font-semibold"&gt;Transparency:&lt;/span&gt; Monthly investor updates and quarterly strategy reviews&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="our-team" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black text-center gradient-text-blue mb-12"&gt;Our Team: Unparalleled Expertise&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-3xl mx-auto text-center text-lg text-gray-600 mb-12"&gt;Our leadership team combines unparalleled expertise in blockchain, financial markets, and investment management, ensuring Fund 1 delivers exceptional results for investors.&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card text-center p-6 flex flex-col items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-40 h-40 rounded-full overflow-hidden bg-gray-200 mb-6 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-500 text-sm"&gt;Placeholder for&lt;br&gt;Alan Mittleman&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-2"&gt;Alan Mittleman&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-gray-700 mb-3"&gt;Chief Investment Officer&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;With 25+ years in investment banking and digital assets, Alan led trading desks at Bear Stearns, Credit Suisse, and others, generating up to $600M in revenue and managing teams of 50. A proven leader in business transformation.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card text-center p-6 flex flex-col items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-40 h-40 rounded-full overflow-hidden bg-gray-200 mb-6 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-500 text-sm"&gt;Placeholder for&lt;br&gt;Sandeep Kaur&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-2"&gt;Sandeep Kaur&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-gray-700 mb-3"&gt;Co-Founder &amp; Managing Partner&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;With 17 years in software and blockchain, Sandeep, an early cryptocurrency adopter since 2014, led DeFi at Reach and USDC at Circle. As Head of Web 3.0 at Innova, she advised enterprises on blockchain adoption, specializing in tokenization and stablecoins. Holds an MBA in Information Technology and MIT Fintech certification.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="card text-center p-6 flex flex-col items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="w-40 h-40 rounded-full overflow-hidden bg-gray-200 mb-6 flex items-center justify-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-gray-500 text-sm"&gt;Placeholder for&lt;br&gt;Eb Gaines&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-2"&gt;Eb Gaines&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="font-semibold text-gray-700 mb-3"&gt;Co-Founder &amp; Managing Partner&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-600"&gt;With 30 years in hedge funds, venture capital, and proprietary trading, Eb founded Middle Fork Partners in 2003, serving hedge funds and tech startups, and led global marketing for ABN AMROs hedge fund client base. Holds FINRA Licenses 4, 24, 7, and 63.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Gemini API Section --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="gemini-analysis" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black text-center gradient-text-blue mb-12"&gt;✨ AI-Powered Strategy Analysis&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-3xl mx-auto text-center text-lg text-gray-600 mb-12"&gt;Describe your investment goals and risk tolerance, and our AI assistant will provide a personalized outlook on which SEBAL strategy may align with your objectives.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card max-w-4xl mx-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label for="investor-profile" class="block text-lg font-semibold text-gray-800 mb-2"&gt;Describe your investment profile:&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;textarea id="investor-profile" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#007bff] focus:border-transparent transition" placeholder="e.g., 'I'm a family office looking for steady, long-term growth with a strong emphasis on capital preservation. I am comfortable with moderate, capped upside in exchange for significant downside protection.'"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="generate-analysis-btn" class="bg-[#0044cc] text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-[#0055e6] transition duration-300 transform hover:scale-105"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>✨ Generate My Personalized Outlook</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="analysis-loader" class="hidden my-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="loader"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-center text-gray-600"&gt;Generating your analysis...&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="analysis-result" class="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold text-[#0044cc] mb-4"&gt;Your Personalized Outlook&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p id="analysis-text" class="text-gray-700 leading-relaxed"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div id="analysis-error" class="mt-8 p-6 bg-red-50 text-red-700 rounded-lg border border-red-200 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-bold mb-4"&gt;An Error Occurred&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p id="error-text"&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="appendix" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-4xl font-black text-center text-gray-900 mb-12"&gt;Appendix: Detailed Market Data&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="max-w-3xl mx-auto text-center text-lg text-gray-600 mb-12"&gt;Explore further details on Bitcoin holdings, federal and state initiatives, and institutional allocations.&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card p-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="accordion-header" onclick="toggleAccordion('currentHoldings')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;Current Bitcoin Holdings with Projected 2026 Allocations&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="accordion-arrow"&gt;▶&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="currentHoldings" class="accordion-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;table class="min-w-full divide-y divide-gray-200 mt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;thead class="bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Institution Type&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Current BTC Holdings&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Projected BTC Holdings by 2026&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Projected Investment 2026 (USD B)&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tbody class="bg-white divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Public Companies&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;757,593 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;1,000,000+ BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;$117.8B&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Governments (Nation States)&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;529,705 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;1,060,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;$161.7B&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Wealth Management Platforms&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;No Public Data Available&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;1,210,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;$122.5B&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Sovereign Wealth Funds&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;No Public Data Available&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;200,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;$7.8B&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;U.S. States &amp; Treasuries&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;No Public Data Available&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;100,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;$5.2B&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Pension Funds&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;No Public Data Available&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;170,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;$9.5B&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Insurance Companies&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;No Public Data Available&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;160,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;$8.3B&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Endowments &amp; Foundations&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;No Public Data Available&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;230,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;$11.1B&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;ETFs &amp; Funds&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;1,391,580 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;N/A&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Private Companies&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;398,323 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;N/A&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;BTC Mining Companies&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;100,780 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;N/A&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;DeFi Entities&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;166,330 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;N/A&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;N/A&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="accordion-header" onclick="toggleAccordion('federalInitiatives')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;United States Federal Government Bitcoin Initiatives&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="accordion-arrow"&gt;▶&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="federalInitiatives" class="accordion-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;table class="min-w-full divide-y divide-gray-200 mt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;thead class="bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Initiative&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Scope and Mechanics&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Amount of BTC Involved&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Current Status&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tbody class="bg-white divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900"&gt;BITCOIN Act of 2025 (S. 954, Sen. Lummis)&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Establishes a Strategic Bitcoin Reserve (SBR) Inside the Treasury. "Bitcoin Purchase Program" mandates Treasury to buy 200,000 BTC per year for five years (total 1,000,000 BTC). Funded via revaluation of Treasury gold certificates and the first $6B/yr of F.&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;1,000,000 BTC (~$100B)&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Introduced March 11, 2025 in Senate Banking Committee.&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900"&gt;Executive Order Establishment of the Strategic Bitcoin Reserve &amp; U.S. Digital Asset Stockpile&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Directs Treasury to transfer every BTC forfeited through civil/criminal actions to the SBR. Prohibits the sale of SBR coins; altcoins may be liquidated into BTC or USD. Creates "proof-of-reserve" public attestations.&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;= 198,000 BTC already in federal custody ($19.8B) to be swept into SBR no new purchases authorized.&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Enacted March 6, 2025.&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm font-medium text-gray-900"&gt;Exchange Stabilization Fund amendment (within S. 954)&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Adds BTC to instruments that the Emergency Support Functions (ESF) may hold and transact.&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Contingent on BITCOIN Act passage.&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;See the BITCOIN Act&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="accordion-header" onclick="toggleAccordion('stateInitiatives')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;United States State Bitcoin Initiatives&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="accordion-arrow"&gt;▶&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="stateInitiatives" class="accordion-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;table class="min-w-full divide-y divide-gray-200 mt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;thead class="bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;State&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Bill/Act&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Proposed Allocation&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Max Allocation&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Current Status&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tbody class="bg-white divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;South Carolina&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 4256-Strategic Digital Assets Reserve Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤10% per fund and absolute cap 1,000,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;1,000,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;House Ways and Means Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;North Carolina&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;SB 327-Bitcoin Reserve and Investment Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤10% of all public funds&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;127,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Senate Finance Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Minnesota&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HF 2946 Minnesota Bitcoin Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤ 10% of the State Board of Investment assets&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;98,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;House State Government Finance Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Texas&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;SB 21-Texas Strategic Bitcoin Reserve Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Comptroller may accumulate BTC from the ESF; no fixed percentage&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;27,100 BTC (if 10% ESF)&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Passed Senate and House; Awaiting Governor's signature&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;New Mexico&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;SB 275 Strategic Bitcoin Reserve Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤5% of Land-Grant and Severance-Tax funds&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;20,500 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Senate Finance Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Ohio&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 703/SB 57 Ohio Bitcoin Reserve Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤ 10% of GRF surplus and select funds&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;12,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;House and Senate Finance Committees&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;West Virginia&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;SB 465 Inflation Protection Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤10% of the public monies in BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;8,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Senate Banking and Insurance Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;New Hampshire&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 302 Digital Asset and Precious-Metals Reserve Fund&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤5% of all state funds&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;7,500 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Enacted May 5, 2025&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Michigan&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 4087 adds §351a to Mgmt. and the Budget Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤10% of General and Stabilization funds&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;4,500 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;House Comms and Tech Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Massachusetts&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;SD422-/S.1967 Bitcoin Strategic Reserve&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤5% of the Stabilization Fund&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;4,100 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Joint Committee on Revenue&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Alabama&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 482/SB 283 Strategic Bitcoin Reserve&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤10% of public funds; ≥ 5-yr hold&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;3,000 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Pending in Finance Committees&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Georgia&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;SB 228-State Depository Board Bitcoin Investment Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤5% of Revenue Shortfall Reserve&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;2,800 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Senate Banking and Finance Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Rhode Island&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 6007- Digital Asset Retention Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;≤10% of uncommitted funds&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;~550 BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;House Finance Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Arizona&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 2749- Bitcoin and Digital Assets Reserve Fund&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Funded by unclaimed digital assets, staking rewards, airdrops, no taxpayer purchases&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;TBD&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Enacted May 7, 2025&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Illinois&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 1844 Strategic Bitcoin Reserve Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Bitcoin-only fund; no percentage cap&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;TBD&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;House Revenue and Finance Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Kentucky&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 376-Inflation Protection Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;BTC across state accounts; no cap specified&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;TBD&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;House Banking and Insurance Committee&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Maryland&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 1389 Strategic Bitcoin Reserve Act&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Reserve seeded by enforcement proceeds; no ceiling&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;TBD&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Hearing June 11, 2025&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Missouri&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;HB 1217- Bitcoin Strategic Reserve Fund&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Donationfriendly- fund; ≥ 5-yr hold; no cap&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;TBD&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Awaiting committee vote&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="accordion-header" onclick="toggleAccordion('federalAgencies')"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;United States Bitcoin Holdings by Federal Agencies &amp; Semipublic Institutions&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="accordion-arrow"&gt;▶&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="federalAgencies" class="accordion-content"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="overflow-x-auto"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;table class="min-w-full divide-y divide-gray-200 mt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;thead class="bg-gray-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Agency&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;BTC Held / Affected&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>&lt;th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"&gt;Notes&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;tbody class="bg-white divide-y divide-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Department of Justice / U.S. Marshals&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;~198,000 BTC seized&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Seized from cases like Silk Road, Bitfinex hack. Executive Order now mandates transfer into Strategic Bitcoin Reserve.&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;Federal Reserve&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;No direct BTC holdings&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Remittances earmarked (up to $6B/year) to fund the 1M BTC purchase schedule in Senate Bill S.954.&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;tr&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"&gt;General Services Administration (GSA)&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"&gt;Historically auctioned DOJ-assigned BTC&lt;/td&gt;&lt;td class="px-6 py-4 whitespace-normal text-sm text-gray-500"&gt;Auctions paused pending Strategic Bitcoin Reserve (SBR) implementation.&lt;/td&gt;&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="contact" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card bg-[#0044cc] text-white p-10 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-4xl font-black mb-4"&gt;Structure Crypto Exposure the Right Way.&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="max-w-3xl mx-auto text-lg text-blue-200 mb-8"&gt;This is your moment to structure crypto exposure the right way.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-xl font-semibold mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;+646-789-1854&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;info@sebalcapital.com&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;www.sebalcapital.com&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-blue-200 mt-4 text-lg mb-8"&gt;620 W 42nd street, New York, NY 10036&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="mt-8 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="bg-white text-[#0044cc] font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300"&gt;Book a 1:1&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="bg-white text-[#0044cc] font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300"&gt;Access Full Deck &amp; Case Studies&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="bg-white text-[#0044cc] font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-100 transition duration-300"&gt;Explore Custom Mandates&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="disclaimer" class="mb-20 md:mb-28"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="card bg-gray-100 p-8 text-sm text-gray-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-xl font-bold text-gray-800 mb-4"&gt;DISCLAIMER: Legal Information and Disclaimers&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="mb-4"&gt;This document ("Presentation") is confidential and intended solely for informational purposes. It does not constitute an offer to sell or a solicitation of an offer to buy any securities or investment interests in Sebal Digital Assets Fund ("Fund") or any other vehicle managed by SEBALCapitalLLC ("Tantrum Ventures"). Any such offer will be made only by means of definitive offering documents, including a Private Placement Memorandum ("PPM"), Operating Agreement, and Subscription Agreement, and only in jurisdictions where permitted by law.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="mb-4"&gt;This Presentation is intended solely for use by qualified, accredited investors as defined under Rule 501(a) of Regulation D of the Securities Act of 1933. The Fund is being offered pursuant to Rule 506(c) under Regulation D and is not registered under the Securities Act or the Investment Company Act of 1940.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;While Sebal Digital Assets Fund employs structured investment strategies designed to limit downside exposure (e.g., through defined-outcome options overlays), investments in the Fund still involve risk, including the potential for losses up to the amount invested. Investors should understand that strategy execution, counterparty, or market dislocation risks could result in partial or full loss despite protective structuring. Liquidity is limited and early withdrawals may not be permitted. This Presentation contains forward-looking statements, including but not limited to expectations regarding strategy outcomes, performance targets, and market conditions. These statements are inherently uncertain and subject to change. Actual results may differ materially from those expressed or implied. Past performance is not indicative of future results. The information contained herein has been obtained from sources believed to be reliable but is not guaranteed for accuracy or completeness. SEBAL Capital makes no representations or warranties, express or implied, as to the information's accuracy or completeness and assumes no obligation to update or revise it. This material may not be copied, reproduced, or redistributed without the prior written consent of SEBALCapitalLLC. All prospective investors should consult their legal, tax, and financial advisors prior to making any investment decision.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;footer class="bg-gray-200 text-gray-700 rounded-lg p-6 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-3xl font-black mb-2"&gt;THANK YOU&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-lg"&gt;www.sebalcapital.com&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">document.addEventListener('DOMContentLoaded', function () {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const brandColors = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>deepBlue: '#0044cc',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>brightBlue: '#007bff',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mediumBlue: '#4da6ff',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lightBlue: '#99ccff',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>extraLightBlue: '#e6f2ff',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>darkGray: '#333333',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mediumGray: '#666666',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lightGray: '#DDDDDD',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>softRed: '#ef4444',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>softGreen: '#22c55e',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chartBlue1: '#0044cc',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chartBlue2: '#007bff',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chartBlue3: '#4da6ff',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chartBlue4: '#99ccff',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>chartBlue5: '#cceeff',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const tooltipConfig = {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tooltip: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>backgroundColor: '#FFF',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>titleColor: brandColors.darkGray,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>bodyColor: brandColors.mediumGray,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>borderColor: brandColors.lightGray,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>borderWidth: 1,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>padding: 15,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>titleFont: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>weight: 'bold',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>size: 16,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>bodyFont: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>size: 14,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>displayColors: false,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>callbacks: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: function(tooltipItems) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const item = tooltipItems[0];</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>let label = item.chart.data.labels[item.dataIndex];</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>if (Array.isArray(label)) {</p>
+<p class="p1"><span class="Apple-converted-space">                          </span>return label.join(' ');</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>return label;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function wrapLabel(label, maxWidth) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (typeof label !== 'string') return label;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (label.length &lt;= maxWidth) return label;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const words = label.split(' ');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const lines = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentLine = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>words.forEach(word =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if ((currentLine + (currentLine === '' ? '' : ' ') + word).length &gt; maxWidth &amp;&amp; currentLine !== '') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lines.push(currentLine);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentLine = word;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentLine += (currentLine === '' ? '' : ' ') + word;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lines.push(currentLine);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return lines;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const etfCtx = document.getElementById('etfComparisonChart');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (etfCtx) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>new Chart(etfCtx, {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>type: 'bar',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>labels: ['U.S. Spot Bitcoin ETFs (2024 AUM)', 'Gold ETFs (Comparable Period)'],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>label: 'Assets Under Management (Billions USD)',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>data: [129, 95],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>backgroundColor: [brandColors.brightBlue, brandColors.lightBlue],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderColor: [brandColors.deepBlue, brandColors.mediumBlue],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderWidth: 2,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderRadius: 5,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>...tooltipConfig,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>...tooltipConfig.plugins,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>legend: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>display: false</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>y: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>beginAtZero: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: true,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>text: 'AUM (in Billions USD)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 14, weight: 'bold' }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>color: brandColors.lightGray</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>x: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ticks: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 12 }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: false</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const projectedHoldingsCtx = document.getElementById('projectedHoldingsChart');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (projectedHoldingsCtx) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const rawLabels = ['Public Companies', 'Governments (Nation States)', 'Wealth Management Platforms', 'Sovereign Wealth Funds', 'U.S. States &amp; Treasuries', 'Pension Funds', 'Insurance Companies', 'Endowments &amp; Foundations'];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const projectedBtc = [1000000, 1060000, 1210000, 200000, 100000, 170000, 160000, 230000];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const projectedInvestment = [117.8, 161.7, 122.5, 7.8, 5.2, 9.5, 8.3, 11.1];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>new Chart(projectedHoldingsCtx, {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>type: 'bar',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>labels: rawLabels.map(label =&gt; wrapLabel(label, 14)),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>datasets: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>label: 'Projected BTC Holdings (Millions)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>data: projectedBtc.map(val =&gt; val / 1000000),<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>backgroundColor: brandColors.chartBlue1,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderColor: brandColors.deepBlue,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderWidth: 1,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>yAxisID: 'y'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>label: 'Projected Investment (USD Billions)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>data: projectedInvestment,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>backgroundColor: brandColors.chartBlue3,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderColor: brandColors.mediumBlue,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderWidth: 1,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>yAxisID: 'y1'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>...tooltipConfig,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>...tooltipConfig.plugins,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>legend: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>position: 'top',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>labels: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 12 }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>y: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>position: 'left',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: true,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>text: 'BTC Holdings (Millions)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 12, weight: 'bold' }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>color: brandColors.lightGray</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ticks: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>callback: function(value) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>return value + 'M';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>y1: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>position: 'right',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: true,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>text: 'Investment (USD Billions)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 12, weight: 'bold' }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>drawOnChartArea: false</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ticks: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>callback: function(value) {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>return '$' + value + 'B';</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>x: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ticks: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 10 }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: false</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const optionsCtx = document.getElementById('optionsVolumeChart');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if(optionsCtx) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const rawLabels = ['Bitcoin (BTC) Weekly Options Volume', 'Ethereum (ETH) Weekly Options Volume', 'Solana (SOL) Growing Derivatives Market', 'Ripple (XRP) Derivatives Integration', 'Dogecoin (DOGE) Emerging Options'];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const wrappedLabels = rawLabels.map(label =&gt; wrapLabel(label, 18));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>new Chart(optionsCtx, {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>type: 'bar',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>labels: wrappedLabels,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>label: 'Weekly Volume (in Billions USD)',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>data: [20, 12, 5, 3, 1.5],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>backgroundColor: [</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.chartBlue1,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.chartBlue2,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.chartBlue3,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.chartBlue4,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.chartBlue5</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderWidth: 0,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderRadius: 5</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>...tooltipConfig,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>indexAxis: 'y',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>...tooltipConfig.plugins,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>legend: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>display: false</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>x: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>beginAtZero: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: true,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>text: 'Volume (in Billions USD)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 14, weight: 'bold' }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>color: brandColors.lightGray</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>y: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ticks: {</p>
+<p class="p1"><span class="Apple-converted-space">                           </span>font: { size: 12 }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: false</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const definedOutcomeCtx = document.getElementById('definedOutcomeChart');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (definedOutcomeCtx) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const marketReturn = Array.from({length: 201}, (v, i) =&gt; i - 100); // -100% to +100%</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const strategyPayoff = marketReturn.map(mr =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (mr &lt;= -20) return -20;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (mr &gt;= 65) return 65;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return mr;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>new Chart(definedOutcomeCtx, {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>type: 'line',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>labels: marketReturn.map(String),</p>
+<p class="p1"><span class="Apple-converted-space">                </span>datasets: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>label: 'Market Return',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>data: marketReturn,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderColor: brandColors.darkGray,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderDash: [5, 5],</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>fill: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointRadius: 0,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>tension: 0.1</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>label: 'Structured Strategy',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>data: strategyPayoff,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderColor: brandColors.deepBlue,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderWidth: 3,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>fill: false,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointRadius: 0,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>tension: 0.1</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>...tooltipConfig,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>...tooltipConfig.plugins,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>legend: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>position: 'top',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>labels: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 12 }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>annotation: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>annotations: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>line1: {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>type: 'line',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>xMin: -20,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>xMax: -20,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>borderColor: brandColors.softRed,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>borderWidth: 2,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>borderDash: [6, 6],</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>label: {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>content: 'Max Loss: -20%',</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>enabled: true,</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>position: 'start',</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>font: { size: 12, weight: 'bold' },</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>color: brandColors.softRed,</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>xAdjust: -50,</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>yAdjust: 10</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                             </span>line2: {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>type: 'line',</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>xMin: 65,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>xMax: 65,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>borderColor: brandColors.softGreen,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>borderWidth: 2,</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>borderDash: [6, 6],</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>label: {</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>content: 'Max Gain: +65%',</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>enabled: true,</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>position: 'end',</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>font: { size: 12, weight: 'bold' },</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>color: brandColors.softGreen,</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>xAdjust: 50,</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>yAdjust: -10</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>x: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: true,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>text: 'Market Return (%)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 14, weight: 'bold' }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>color: brandColors.lightGray</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>min: -50,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>max: 100</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>y: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: true,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>text: 'Strategy Payoff (%)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 14, weight: 'bold' }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>color: brandColors.lightGray</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>min: -40,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>max: 100</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const returnRangeCtx = document.getElementById('returnRangeChart');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (returnRangeCtx) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>new Chart(returnRangeCtx, {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>type: 'bar',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>labels: ['Quarterly (Min)', 'Quarterly (Max)', 'Annualized (Min)', 'Annualized (Max)', 'Max Annualized'],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>label: 'Return (%)',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>data: [7.5, 25, 30, 130, 130],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>backgroundColor: [</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.lightBlue,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.brightBlue,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.lightBlue,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.brightBlue,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.softGreen</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderColor: [</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.mediumBlue,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.deepBlue,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.mediumBlue,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.deepBlue,<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>brandColors.softGreen</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderWidth: 1,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>borderRadius: 5</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>...tooltipConfig,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>...tooltipConfig.plugins,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>legend: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>display: false</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>datalabels: { // This plugin is not loaded, but if it were, it would show labels.</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>anchor: 'end',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>align: 'end',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>formatter: (value) =&gt; value + '%',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>font: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>weight: 'bold'</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>y: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>beginAtZero: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>title: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: true,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>text: 'Return (%)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 14, weight: 'bold' }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>color: brandColors.lightGray</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>max: 140</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>x: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>ticks: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>font: { size: 12 }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>grid: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>display: false</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- Accordion Logic ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const accordionHeaders = document.querySelectorAll('.accordion-header');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>accordionHeaders.forEach(header =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const contentId = header.nextElementSibling.id;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>toggleAccordion(contentId);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function toggleAccordion(id) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const content = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const header = content.previousElementSibling;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (content.classList.contains('active')) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.accordion-content.active').forEach(item =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>item.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>item.previousElementSibling.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>content.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// --- Gemini API Logic ---</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const generateBtn = document.getElementById('generate-analysis-btn');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const investorProfileInput = document.getElementById('investor-profile');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const loader = document.getElementById('analysis-loader');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const resultDiv = document.getElementById('analysis-result');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const resultText = document.getElementById('analysis-text');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const errorDiv = document.getElementById('analysis-error');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const errorText = document.getElementById('error-text');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>generateBtn.addEventListener('click', async () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const userProfile = investorProfileInput.value;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!userProfile.trim()) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showError("Please describe your investment profile before generating an analysis.");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>showLoading(true);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const prompt = `</p>
+<p class="p1"><span class="Apple-converted-space">            </span>You are an expert financial analyst assistant for SEBAL Capital. Your role is to analyze a potential investor's profile and explain which of SEBAL's two investment strategies might be a better fit.</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>**Investor Profile:**</p>
+<p class="p1"><span class="Apple-converted-space">            </span>${userProfile}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>**SEBAL Capital's Strategies:**</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>**Strategy 1: Downside Protected Defined Outcome Strategy**</p>
+<p class="p1"><span class="Apple-converted-space">            </span>- **Description:** Delivers capped exposure to the price return of the top 5 cryptocurrency assets (BTC, ETH, XRP, SOL, DOGE), while limiting the maximum loss to 20%. It uses protective put options and sells out-of-the-money call options.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>- **Key Features:** Diversified exposure, capital preservation (max loss 20%), defined 12-month outcome, annual liquidity. Good for balancing growth with risk management. Estimated max gain is ~65%.</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>**Strategy 2: Covered Call Income &amp; Price Appreciation**</p>
+<p class="p1"><span class="Apple-converted-space">            </span>- **Description:** Generates quarterly income by selling 20% to 30% out-of-the-money call options on the top 5 cryptocurrency assets, while maintaining long exposure for price appreciation.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>- **Key Features:** Yield enhancement (~7.5% target quarterly premiums), takes advantage of high volatility for premium income, premiums provide a downside buffer, creates disciplined exit points. Good for investors seeking regular income and long-term growth.</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>**Your Task:**</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Based on the investor's profile, write a brief, personalized analysis in 2-3 paragraphs.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>1. Acknowledge the investor's goals.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>2. Recommend which of the two strategies seems more aligned with their profile.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>3. Explain your reasoning clearly, referencing specific features of the recommended strategy and how they match the investor's stated goals.</p>
+<p class="p1"><span class="Apple-converted-space">            </span>4. Maintain a professional, helpful, and institutional tone. Do not give financial advice, but rather explain the alignment of the strategies with the stated goals. Start the response with 'Based on your profile, here is a personalized outlook:'. Do not use markdown formatting.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const payload = { contents: chatHistory };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const apiKey = ""; // API key will be provided by the environment</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const response = await fetch(apiUrl, {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>method: 'POST',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>headers: { 'Content-Type': 'application/json' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>body: JSON.stringify(payload)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!response.ok) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const errorData = await response.json();</p>
+<p class="p1"><span class="Apple-converted-space">                </span>throw new Error(errorData.error ? errorData.error.message : 'An unknown error occurred.');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const result = await response.json();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (result.candidates &amp;&amp; result.candidates.length &gt; 0 &amp;&amp;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>result.candidates[0].content &amp;&amp; result.candidates[0].content.parts &amp;&amp;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>result.candidates[0].content.parts.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const text = result.candidates[0].content.parts[0].text;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showResult(text);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>throw new Error("The AI model returned an unexpected response format.");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.error("Gemini API Error:", err);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showError(`Failed to generate analysis. ${err.message}`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} finally {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>showLoading(false);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function showLoading(isLoading) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (isLoading) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>loader.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resultDiv.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>errorDiv.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>generateBtn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>generateBtn.classList.add('opacity-50', 'cursor-not-allowed');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>loader.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>generateBtn.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>generateBtn.classList.remove('opacity-50', 'cursor-not-allowed');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function showResult(text) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>resultText.textContent = text;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>resultDiv.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>errorDiv.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function showError(message) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>errorText.textContent = message;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>errorDiv.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>resultDiv.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1">});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
